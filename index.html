@@ -34,7 +34,7 @@ document.getElementById(`${i}`).innerHTML = document.getElementById(`${i}`).inne
 
 setInterval(function(){
 var rd = new Date()
-if (rd.getHours() == 23 && rd().getMinutes() == 59 && rd().getSeconds() == 59) {
+if (rd.getHours() == 0 && rd().getMinutes() == 0 && rd().getSeconds() == 0) {
 window.location.reload()
 }
 },1000);
