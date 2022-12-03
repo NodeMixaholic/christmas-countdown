@@ -31,5 +31,14 @@ document.getElementById(`${i}`).innerHTML = document.getElementById(`${i}`).inne
 }
 }
 }
+
+
+setInterval(function(){
+var rd = new Date()
+if (rd.getHours() == 23 && rd().getMinutes() == 59 && rd().getSeconds() == 59) {
+window.location.reload()
+}
+},1000);
+
 </script>
 </body>
