@@ -36,6 +36,8 @@ setInterval(function(){
 var rd = new Date()
 if (rd.getHours() == 0 && rd().getMinutes() == 0 && rd().getSeconds() == 0) {
 window.location.reload()
+} else {
+console.log(`Current time: ${rd.getHours()}:${rd.getMinutes()}:${rd.getSeconds()}`)
 }
 },1000);
 
