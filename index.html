@@ -1,0 +1,35 @@
+<head>
+<title>Christmas Countdown</title>
+</head>
+<body>
+<div id="cal" width="100%" height="100%"></div>
+<script>
+//<div id="1" width="4%" height="4%"><p>1</p></div>
+const d = new Date();
+let day = d.getDate(); //same as on calendar
+let month = d.getMonth(); //one behind, so january is 0 and december is 11
+
+function getDaysInMonth(year, month) {
+month += 1
+return new Date(year, month, 0).getDate() + 1;
+}
+
+let days = getDaysInMonth(d.getYear(), month)
+
+
+if (month < 11 || day > 25) {
+document.getElementById("cal").innerHTML = "<h1>Hope you had a merry Christmas!</h1>"
+} else if (day == 25 && month == 11) {
+document.getElementById("cal").innerHTML = "<h1>Merry Christmas!</h1>"
+} else {
+for (let i = 0; i < days; i++) {
+if (i > 0 && i < 25) {
+document.getElementById("cal").innerHTML = document.getElementById("cal").innerHTML + `<div id="${i}" style="float: left; padding-right: 10%;" width="4%" height="4%"><h3>${i}</h3></div>`
+if (i <= day) {
+document.getElementById(`${i}`).innerHTML = document.getElementById(`${i}`).innerHTML + "<h3>X</h3>"
+}
+}
+}
+}
+</script>
+</body>
