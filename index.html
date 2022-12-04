@@ -73,7 +73,7 @@ if (rd.getHours() == 0 && rd.getMinutes() == 0 && rd.getSeconds() == 0) {
 window.location.reload()
 } else {
 console.log(`Current time: ${rd.getHours()}:${rd.getMinutes()}:${rd.getSeconds()}`)
-document.getElementById("time").innerText = `Current time: ${rd.toLocaleTimeString("en-US")} / ${d.toLocaleTimeString("en-GB")}`
+document.getElementById("time").innerText = `Current time: ${rd.toLocaleTimeString("en-US")} / ${rd.toLocaleTimeString("en-GB")}`
 }
 },1000);
 
