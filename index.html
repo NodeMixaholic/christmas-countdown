@@ -36,6 +36,7 @@ border-top: 3px dashed red;
 <a href="https://santatracker.google.com" target="_blank">Google Santa Tracker</a> - <a target="_blank" href="https://www.noradsanta.org/">NORAD Santa Tracker</a> - <a target="_blank" href="https://www.northpole.com/">NorthPole.com</a>
 <hr></hr>
 <h1>Christmas countdown:</h1>
+<h2 id="time">Current time: *TIME*</h2>
 <div id="cal" width="100%" height="100%"></div>
 <script>
 const d = new Date();
@@ -72,6 +73,7 @@ if (rd.getHours() == 0 && rd.getMinutes() == 0 && rd.getSeconds() == 0) {
 window.location.reload()
 } else {
 console.log(`Current time: ${rd.getHours()}:${rd.getMinutes()}:${rd.getSeconds()}`)
+document.getElementById("time").innerText = `Current time: ${rd.toLocaleTimeString("en-US")} / ${d.toLocaleTimeString("en-GB")}`
 }
 },1000);
 
