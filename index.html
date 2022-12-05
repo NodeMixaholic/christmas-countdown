@@ -49,6 +49,30 @@ month += 1
 return new Date(year, month, 0).getDate() + 1;
 }
 
+function getFirstDayInMonth(year, month) {
+return new Date(year, month, 1).getDay()
+}
+
+function getDayOfWeek(date) {
+if (date.getDay() == 0) {
+return "Sun"
+} else if (date.getDay() == 1) {
+return "Mon"
+} else if (date.getDay() == 2) {
+return "Tues"
+} else if (date.getDay() == 3) {
+return "Wed"
+} else if (date.getDay() == 4) {
+return "Thurs"
+} else if (date.getDay() == 5) {
+return "Fri"
+} else if (date.getDay() == 6) {
+return "Sat"
+} else {
+return "Undefined"
+}
+}
+
 let days = getDaysInMonth(d.getYear(), month)
 
 
@@ -59,7 +83,11 @@ document.body.innerHTML = "<h1>Merry Christmas!</h1>"
 } else {
 for (let i = 0; i < days; i++) {
 if (i > 0 && i < 25) {
-document.getElementById("cal").innerHTML = document.getElementById("cal").innerHTML + `<div id="${i}" style="float: left; padding-right: 10%; border-style: solid; border-top: 3px solid red; border-bottom: 3px solid red; border-left: 3px solid red; border-right: 3px solid red;" width="4%" height="4%"><h3>${i}</h3></div>`
+let a = d.getDay()
+let firstDay = getFirstDayInMonth(d.getFullYear(), 11)
+let day1 = new Date(d.getFullYear(), 11, i)
+let count = 0;
+document.getElementById("cal").innerHTML = document.getElementById("cal").innerHTML + `<div id="${i}" style="float: left; padding-right: 10%; border-style: solid; border-top: 3px solid red; border-bottom: 3px solid red; border-left: 3px solid red; border-right: 3px solid red;" width="4%" height="4%"><h3>${getDayOfWeek(day1)}, ${i}</h3></div>`
 if (i <= day) {
 document.getElementById(`${i}`).innerHTML = document.getElementById(`${i}`).innerHTML + "<h3>X</h3>"
 }
