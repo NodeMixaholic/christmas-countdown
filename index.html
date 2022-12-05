@@ -59,7 +59,7 @@ document.body.innerHTML = "<h1>Merry Christmas!</h1>"
 } else {
 for (let i = 0; i < days; i++) {
 if (i > 0 && i < 25) {
-document.getElementById("cal").innerHTML = document.getElementById("cal").innerHTML + `<div id="${i}" style="float: left; padding-right: 10%;" width="4%" height="4%"><h3>${i}</h3></div>`
+document.getElementById("cal").innerHTML = document.getElementById("cal").innerHTML + `<div id="${i}" style="float: left; padding-right: 10%; border-style: solid; border-top: 3px solid red; border-bottom: 3px solid red; border-left: 3px solid red; border-right: 3px solid red;" width="4%" height="4%"><h3>${i}</h3></div>`
 if (i <= day) {
 document.getElementById(`${i}`).innerHTML = document.getElementById(`${i}`).innerHTML + "<h3>X</h3>"
 }
