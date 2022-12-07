@@ -86,8 +86,11 @@ if (i > 0 && i < 25) {
 let a = d.getDay()
 let firstDay = getFirstDayInMonth(d.getFullYear(), 11)
 let day1 = new Date(d.getFullYear(), 11, i)
-let count = 0;
+if (getDayOfWeek(day1) == "Sun") {
+document.getElementById("cal").innerHTML = document.getElementById("cal").innerHTML + `<br><div id="${i}" style="float: left; clear: both; padding-right: 10%; border-style: solid; border-top: 3px solid red; border-bottom: 3px solid red; border-left: 3px solid red; border-right: 3px solid red;" width="4%" height="4%"><h3>${getDayOfWeek(day1)}, ${i}</h3></div>`
+} else {
 document.getElementById("cal").innerHTML = document.getElementById("cal").innerHTML + `<div id="${i}" style="float: left; padding-right: 10%; border-style: solid; border-top: 3px solid red; border-bottom: 3px solid red; border-left: 3px solid red; border-right: 3px solid red;" width="4%" height="4%"><h3>${getDayOfWeek(day1)}, ${i}</h3></div>`
+}
 if (i <= day) {
 document.getElementById(`${i}`).innerHTML = document.getElementById(`${i}`).innerHTML + "<h3>X</h3>"
 }
