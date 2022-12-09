@@ -32,11 +32,21 @@ a:active {
 0%{transform: translateX(-100%);}
 100%{transform: translateX(100%);}
 }
+
+@keyframes marquee-reverse{
+0%{transform: translateX(100%);}
+100%{transform: translateX(-100%);}
+}
  
 /* media query to enable animation for only those who want it */
 @media (prefers-reduced-motion: no-preference) {
 .notmarquee {
 animation: marquee 5s linear infinite;
+clear: both;
+}
+
+.notmarquee-rev {
+animation: marquee-reverse 5s linear infinite;
 clear: both;
 }
 }
@@ -47,6 +57,7 @@ border-top: 3px dashed red;
 </style>
 </head>
 <body>
+<div class="notmarquee-rev"><img height="17%" style="transform: scaleX(-1); -webkit-transform: scaleX(-1);" src="https://github.com/NodeMixaholic/christmas-countdown/blob/main/santa.jpg?raw=true"></img></div>
 <h3>Christmas fun:</h3>
 <a href="https://santatracker.google.com" target="_blank">Google Santa Tracker</a> - <a target="_blank" href="https://www.noradsanta.org/">NORAD Santa Tracker</a> - <a target="_blank" href="https://www.northpole.com/">NorthPole.com</a>
 <hr></hr>
