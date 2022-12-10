@@ -108,6 +108,9 @@ document.getElementById("days").innerText = `Christmas countdown: 0 days`
 document.body.innerHTML = "<h1>Merry Christmas!</h1>"
 document.getElementById("days").innerText = `Christmas countdown: 0 days`
 } else {
+if (day == 24 && month == 11) {
+document.body.innerHTML = document.body.innerHTML + '<iframe width="30%" src="https://www.noradsanta.org/en-US/assets/map/embed.html"</iframe>>'
+}
 for (let i = 0; i < days; i++) {
 if (i > 0 && i < 25) {
 let a = d.getDay()
