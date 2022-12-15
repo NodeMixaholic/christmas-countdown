@@ -3,23 +3,32 @@
 <head>
 <title>Christmas Countdown</title>
 <style>
+
+  
+
+body{
+background-color: #053b03;
+color: #e62f22;
+}
+
 .container {
+overflow: hidden;
+position: relative;
+}
+
+.bg {
+opacity: 0.25;
+position: absolute;
+left: 0;
+top: 0;
+width: 100%;
+height: auto;
+}
+
+.container::after {
 color: #e62f22;
 font-family: "Times New Roman", Times, serif;
-}
-  
-.container::before {
-content:"";
-background-color: #053b03;
-background-image: url("amazing-santa-head.png");
-background-repeat: no-repeat;
-background-position: center;
-background-size: auto 100%;
-background-attachment: scroll;
-opacity: 0.2;
-}
-body {
-background-color: #053b03;
+opacity: 1;
 }
 /* unvisited link */
 a:link {
@@ -98,6 +107,7 @@ document.getElementById('musicButton').innerText = "Click here for christmas mus
 </head>
 <body>
 <div class="container" width="100%" height="100%">
+<img class="bg" src="amazing-santa-head.png" alt=""></img>
 <button id="musicButton" onclick="playMusic()">Click here for christmas music.</button>
 <div class="notmarquee-rev"><img height="17%" style="transform: scaleX(-1); -webkit-transform: scaleX(-1);" src="https://github.com/NodeMixaholic/christmas-countdown/blob/main/santa.png?raw=true"></img></div>
 <h3>Christmas fun:</h3>
